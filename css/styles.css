@@ -1,0 +1,32 @@
+h3{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 60px;
+  text-align: center;
+}
+h5 {
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Kalam', cursive;
+  text-align: center;
+  font-size: 30px;
+}
+h4{
+  margin-left: 10%;
+}
+.form-control{
+  width: 50%;
+}
+h6 {
+  margin-left: 30%;
+  font-family: 'Kalam', cursive;
+}
+.score {
+  width: 30%;
+  margin-left: 23%;
+}
+.btn{
+  margin-top: 20px;
+  width: 50%;
+}
+.jumbotron{
+  padding: 10px;
+}
