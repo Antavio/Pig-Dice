@@ -1,6 +1,17 @@
+function disablePlayerOne(){
+  document.getElementById("roll-two").disabled=false;
+  document.getElementById("roll-one").disabled=true;
+}
+
+function disablePlayerTwo(){
+  document.getElementById("roll-two").disabled=false;
+  document.getElementById("roll-one").disabled=true;
+
+}
+
 $(document).ready(function(){
-  var randomScore1 = "";
-  var randomScore2 = "";
+  var randomScore1 = 0;
+  var randomScore2 = 0;
   var rollScore1 = "";
   var rollScore2 = "";
   var sum1=0;
@@ -14,24 +25,26 @@ $(document).ready(function(){
     this.sum = sum;
   };
 
-  // // function random_generator(){
-  // //   var stored_random = Math.floor(Math.random()*6 + 1);
-  // //   return stored_random;
-  // }
+
 
   var playerOne = new Player(name,randomScore1,rollScore1,sum1);
   var playerTwo = new Player(name,randomScore2,rollScore2,sum2);
 
   $("#roll-one").click(function(){
-    var stored_random = Math.floor(Math.random()*6 + 1);
-     $("#die-side").text(stored_random);
+    randomScore1 = Math.floor(Math.random()*6 + 1);
+     $("#die-side").text(randomScore1);
     // alert(stored_random);
-    if(stored_random!=1){
-      sum1+=stored_random;
+    if(randomScore1!=1){
+      sum1+=randomScore1;
       $("#current-score1").text(sum1);
     } else {
-      sum1+=0;
+      sum1=0;
         $("#current-score1").text(sum1);
+        disablePlayerOne();
     }
+  });
+  $("#hold-player-one").click(function(){
+    alert("Your Score is: "+ sum1 + " \n Player Two turn to play");
+    disablePlayerOne();
   });
 });
