@@ -19,18 +19,18 @@
       <h3>Pig Dice Game</h3>
       <h5>Are you good at rolling dice? Grab a partner and Enjoy the Game.</h5>
     </div>
-    <div class="row">
+    <div class="row placement">
       <div class="col-md-6">
-        <label for="player-one-name">First Player</label>
-        <input type="text" class="form-control">
+        <label for="player-one-name" class="titles">Enter Name(First Player):<span class="first-player-name"></span></label>
+        <input type="text" class="form-control names">
       </div>
       <div class="col-md-6">
-        <label for="player-two-name">Second Player</label>
-        <input type="text" class="form-control">
+        <label for="player-two-name" class="titles">Enter Name(Second Player):<span class="first-player-name"></span></label>
+        <input type="text" class="form-control names">
       </div>
-      <button type="submit" class="btn btn-info">Play Game</button>
+      <button type="submit" class="btn btn-info start-game"><strong>Start Game</strong></button>
     </div>
-    <div class="row">
+    <div class="row placement">
       <div class="col-md-6">
         <h4>Player One:<span class="player-one-name"></span></h4>
         <p><strong>Die Side:</strong><span id="die-side"></span></p>
@@ -38,19 +38,19 @@
         <p><strong>Total Score:</strong><span id="total-score1"></span></p>
       </div>
       <div class="col-md-6">
-        <h4>Player Two</h4>
+        <h4>Player Two:<span class="player-one-two"></span></h4>
         <p><strong>Die Side:</strong><span id="die-two"></span></p>
         <p><strong>Roll Score:</strong><span id="current-score2"></span></p>
         <p><strong>Total Score:</strong><span id="total-score2"></span></p>
       </div>
     </div>
-      <div class="row">
+      <div class="row placement">
         <div class="col-md-6">
-          <button type="button" class="btn btn-outline-success btn-block" id="roll-one">Roll Die</button>
+          <button type="button" class="btn btn-success btn-block" id="roll-one">Roll Die</button>
           <button type="button" class="btn btn-outline-info btn-block" id="hold-player-one">Hold</button>
         </div>
         <div class="col-md-6">
-          <button type="button" class="btn btn-outline-success btn-block" id="roll-two">Roll Die</button>
+          <button type="button" class="btn btn-success btn-block" id="roll-two">Roll Die</button>
           <button type="button" class="btn btn-outline-info btn-block" id="hold-player-two">Hold</button>
         </div>
       </div>
