@@ -36,6 +36,7 @@ $("#roll-one").click(function(){
   }
 });
 $("#hold-player-one").click(function(){
+  total1=rollSum1+generatedNumber1;
   alert("Your Total Score is: "+ total1 + " \n Player Two turn to play");
   disablePlayerOne();
 });
