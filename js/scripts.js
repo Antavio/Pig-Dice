@@ -42,6 +42,14 @@ $("#hold-player-one").click(function(){
 });
 };
 
+//Player two Logic
+function playerTwoLogic(){
+  $("#roll-two").click(function(){
+    generatedNumber2 = Math.floor(Math.random()*6 + 1);
+    $("#die-two").text(generatedNumber2);
+  });
+};
+
 //User Interface Logic
 $(document).ready(function(){
   function Player(name,generatedNumber,rollSum,total){
@@ -54,5 +62,5 @@ $(document).ready(function(){
   var playerOne = new Player(name1,generatedNumber1,rollSum1,total1);
   var playerTwo = new Player(name2,generatedNumber2,rollSum2,total2);
   playerOneLogic();
-
+  playerTwoLogic();
 });
