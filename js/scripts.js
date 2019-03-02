@@ -38,7 +38,7 @@ $("#roll-one").click(function(){
 });
 $("#hold-player-one").click(function(){
   total1=rollSum1+generatedNumber1;
-  alert("Your Total Score is: "+ total1 + " \n Player Two turn to play");
+  alert("Your Current Total Score is: "+ total1 + " \n Player Two turn to play");
   disablePlayerOne();
 });
 };
@@ -62,6 +62,11 @@ function playerTwoLogic(){
     total2=rollSum2+generatedNumber2;
     $("#total-score2").text(total2);
     }
+  });
+  $("#hold-player-two").click(function(){
+    total2=generatedNumber2+rollSum2;
+    alert("Your Current Total Score is: "+ total2 + " \n Player One turn to play");
+    disablePlayerTwo();
   });
 };
 
