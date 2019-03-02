@@ -41,6 +41,7 @@ $("#hold-player-one").click(function(){
 });
 };
 
+//User Interface Logic
 $(document).ready(function(){
   function Player(name,generatedNumber,rollSum,total){
     this.name=name;
