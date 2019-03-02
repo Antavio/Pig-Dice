@@ -47,6 +47,8 @@ function playerTwoLogic(){
   $("#roll-two").click(function(){
     generatedNumber2 = Math.floor(Math.random()*6 + 1);
     $("#die-two").text(generatedNumber2);
+    rollSum2 = rollSum2+generatedNumber2;
+    $("#current-score2").text(rollSum2);
   });
 };
 
