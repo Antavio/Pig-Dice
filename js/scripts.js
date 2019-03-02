@@ -4,9 +4,10 @@ function disablePlayerOne(){
 }
 
 function disablePlayerTwo(){
-  document.getElementById("roll-two").disabled=false;
-  document.getElementById("roll-one").disabled=true;
+  document.getElementById("roll-two").disabled=true;
+  document.getElementById("roll-one").disabled=false;
 }
+
 
 var name1 = "";
 var name2 = "";
@@ -47,8 +48,20 @@ function playerTwoLogic(){
   $("#roll-two").click(function(){
     generatedNumber2 = Math.floor(Math.random()*6 + 1);
     $("#die-two").text(generatedNumber2);
+    if(generatedNumber2 === 1){
+      rollSum2=0;
+      alert("Your die rolled on side 1 " + "\n Player one to roll the die");
+      $("#current-score2").text(rollSum2);
+      total2=total2+rollSum2;
+      $("#total-score2").text(total2);
+      disablePlayerTwo();
+
+    }else{
     rollSum2 = rollSum2+generatedNumber2;
     $("#current-score2").text(rollSum2);
+    total2=rollSum2+generatedNumber2;
+    $("#total-score2").text(total2);
+    }
   });
 };
 
