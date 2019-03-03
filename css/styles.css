@@ -50,3 +50,6 @@ body{
 .placement{
   margin-left: 15%;
 }
+#game-interface{
+  display: none;
+}
