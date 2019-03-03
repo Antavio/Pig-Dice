@@ -19,8 +19,20 @@ The different technologies that were used to develop this program include:
 2. CSS.
 3. JavaScript.
 4. jQuery.
+5. Bootstrap.
 
 ### Project's BDD
+|Behaviour   |Expected Results   |
+|---|---|
+|The programs prompts both players to enter their names| Display Players name on the Name Tags  |
+|Player One prompted to roll the die   |A random number is generated for the die.  |
+|If the generated number is a number 1 | The Player one is disabled to continue playing & instead Player two alerted to play.|
+|If number generated for Player one is not equal to 1   |The first player proceeds to roll the die until they roll side with number 1 or they hold the play.The cumulative score, die side rolled & total are all displayed|
+|If Player one chances are over Player Two is alerted to roll the die.If the generated number is not a number 1   |They player proceeds to roll the die until they roll side with number 1 or they hold the play . The cumulative score, die side rolled & total are all displayed   |
+| If Player two rolls a number 1 or hold their play  | Player one is alerted to play since its their turn   |
+|If either Player One/Two holds their play   |Their current score is held & if they resume play, the cumulative score builds from their last score|
+| When either player rolls a number 1  | No score is awarded i.e they score a zero|
+| When the cumulative score is equal or greater than 100  |The first player to get a cumulative of 100 is declared the winner|
 
 ### Link to live site
 Here is a link to the live website
