@@ -88,7 +88,18 @@ function restart_game(){
   $("#restart").click(function(){
     $("#login_details").show();
     $("#game-interface").hide();
+    $("#die-side").empty();
+    $("#current-score1").empty();
+    $("#total-score1").empty();
+    $("#die-two").empty();
+    $("#current-score2").empty();
+    $("#total-score2").empty();
+    rollSum1=0;
+    rollSum2=0;
+    total1=0;
+    total2=0;
     clearNameFields();
+
 
   });
 };
