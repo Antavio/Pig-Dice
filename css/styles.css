@@ -32,16 +32,12 @@ h6 {
 body{
   background-image: url(../images/sativa.png);
 }
-.names{
-  width: 80%;
-  border-radius: 40px 10px;
-}
 .start-game{
-  margin-left: 28%;
-  width: 30%;
+  margin-left: 22%;
+  width: 40%;
   border-radius: 150px 100px;
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 .titles{
   font-family: 'Kalam', cursive;
@@ -52,4 +48,12 @@ body{
 }
 #game-interface{
   display: none;
+}
+#restart{
+  margin-left: 38%;
+  width: 20%;
+}
+.names{
+  width: 80%;
+  border-radius: 35px 10px;
 }
