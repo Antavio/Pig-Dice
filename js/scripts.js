@@ -26,9 +26,14 @@ $("#roll-one").click(function(){
   // alert(stored_random);
   if(generatedNumber1!=1){
     rollSum1+=generatedNumber1;
-    total1=rollSum1+generatedNumber1;
+    total1=rollSum1;
     $("#current-score1").text(rollSum1);
     $("#total-score1").text(total1);
+    if(total1>=100){
+      alert("You won the game");
+    }else {
+
+    }
   } else {
     rollSum1=0;
     alert("Your die rolled on side 1 "+ "\n Next player to roll the die");
@@ -37,7 +42,7 @@ $("#roll-one").click(function(){
   }
 });
 $("#hold-player-one").click(function(){
-  total1=rollSum1+generatedNumber1;
+  total1=rollSum1;
   alert("Your Current Total Score is: "+ total1 + " \n Player Two turn to play");
   disablePlayerOne();
 });
@@ -59,19 +64,36 @@ function playerTwoLogic(){
     }else{
     rollSum2 = rollSum2+generatedNumber2;
     $("#current-score2").text(rollSum2);
-    total2=rollSum2+generatedNumber2;
+    total2=rollSum2;
     $("#total-score2").text(total2);
+    if(total2>=100){
+      alert("You won the game."+"\n Restart test");
+      disablePlayerTwo();
+    }else {
+
+    }
     }
   });
   $("#hold-player-two").click(function(){
-    total2=generatedNumber2+rollSum2;
+    total2=rollSum2;
     alert("Your Current Total Score is: "+ total2 + " \n Player One turn to play");
     disablePlayerTwo();
   });
 };
+function clearNameFields(){
+  document.getElementById("form_input").reset();
+};
+
 
 //User Interface Logic
 $(document).ready(function(){
+  $("#form_input").submit(function (event){
+    event.preventDefault();
+    name1= $("#first-player").val();
+    $(".player-one-name").text(name1);
+    name2= $("#second-player").val();
+    $(".player-two-name").text(name2);
+  });
   function Player(name,generatedNumber,rollSum,total){
     this.name=name;
     this.generatedNumber=generatedNumber;
@@ -81,6 +103,9 @@ $(document).ready(function(){
 
   var playerOne = new Player(name1,generatedNumber1,rollSum1,total1);
   var playerTwo = new Player(name2,generatedNumber2,rollSum2,total2);
+
   playerOneLogic();
   playerTwoLogic();
+  clearNameFields();
+
 });
