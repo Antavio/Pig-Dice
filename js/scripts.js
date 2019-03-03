@@ -89,6 +89,8 @@ function clearNameFields(){
 $(document).ready(function(){
   $("#form_input").submit(function (event){
     event.preventDefault();
+    $("#game-interface").show();
+    $("#login_details").hide();
     name1= $("#first-player").val();
     $(".player-one-name").text(name1);
     name2= $("#second-player").val();
