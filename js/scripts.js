@@ -84,12 +84,19 @@ function clearNameFields(){
   document.getElementById("form_input").reset();
 };
 
+function restart_game(){
+  $("#restart").click(function(){
+    $("#login_details").show();
+    $("#game-interface").hide();
+    clearNameFields();
 
+  });
+};
 //User Interface Logic
 $(document).ready(function(){
   $("#form_input").submit(function (event){
     event.preventDefault();
-    $("#game-interface").show();
+    $("#game-interface").slideDown("slow");
     $("#login_details").hide();
     name1= $("#first-player").val();
     $(".player-one-name").text(name1);
@@ -109,5 +116,5 @@ $(document).ready(function(){
   playerOneLogic();
   playerTwoLogic();
   clearNameFields();
-
+  restart_game();
 });
