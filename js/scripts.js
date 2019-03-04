@@ -1,3 +1,14 @@
+//Business Logic
+function Player(name,generatedNumber,rollSum,total){
+  this.name=name;
+  this.generatedNumber=generatedNumber;
+  this.rollSum = rollSum;
+  this.total = total;
+};
+
+var playerOne = new Player(name1,generatedNumber1,rollSum1,total1);
+var playerTwo = new Player(name2,generatedNumber2,rollSum2,total2);
+
 function disablePlayerOne(){
   document.getElementById("roll-two").disabled=false;
   document.getElementById("roll-one").disabled=true;
@@ -27,9 +38,8 @@ function playerOneLogic(){
     // alert(stored_random);
     if(generatedNumber1!=1){
       rollSum1+=generatedNumber1;
-      total1=rollSum1;
       $("#current-score1").text(rollSum1);
-      $("#total-score1").text(total1);
+      //$("#total-score1").text(total1);
       if(total1>=100){
         alert("You won the game");
       }else {
@@ -39,14 +49,20 @@ function playerOneLogic(){
       rollSum1=0;
       $("#current-score1").text(rollSum1);
       alert("Your die rolled on side 1 "+ "\n Next player to roll the die");
-      total1=rollSum1;
-      $("#total-score1").text(total1);
+      // $("#total-score1").text(total1);
       disablePlayerOne();
     };
   });
   $("#hold-player-one").click(function(){
-    total1=rollSum1;
+    total1+=rollSum1;
+    rollSum1-=rollSum1;
     alert("Your Current Total Score is: "+ total1 + " \n Player Two turn to play");
+    $("#total-score1").text(total1);
+    if(total1>=100){
+      alert("You won the game");
+    }else {
+
+    }
     disablePlayerOne();
   });
 };
@@ -56,30 +72,34 @@ function playerTwoLogic(){
   $("#roll-two").click(function(){
     generatedNumber2 = Math.floor(Math.random()*6 + 1);
     $("#die-two").text(generatedNumber2);
-    if(generatedNumber2 === 1){
-      rollSum2=0;
-      alert("Your die rolled on side 1 " + "\n Player one to roll the die");
+    // alert(stored_random);
+    if(generatedNumber1!=1){
+      rollSum2+=generatedNumber2;
       $("#current-score2").text(rollSum2);
-      total2=rollSum2;
-      $("#total-score2").text(total2);
-      disablePlayerTwo();
-
-    }else{
-      rollSum2 = rollSum2+generatedNumber2;
-      $("#current-score2").text(rollSum2);
-      total2=rollSum2;
-      $("#total-score2").text(total2);
+      //$("#total-score1").text(total1);
       if(total2>=100){
-        alert("You won the game."+"\n Restart test");
-        disablePlayerTwo();
+        alert("You won the game");
       }else {
 
       }
-    }
+    } else {
+      rollSum2=0;
+      $("#current-score2").text(rollSum2);
+      alert("Your die rolled on side 1 "+ "\n Next player to roll the die");
+      // $("#total-score1").text(total1);
+      disablePlayerTwo();
+    };
   });
   $("#hold-player-two").click(function(){
-    total2=rollSum2;
-    alert("Your Current Total Score is: "+ total2 + " \n Player One turn to play");
+    total2+=rollSum2;
+    rollSum2-=rollSum2;
+    alert("Your Current Total Score is: "+ total2 + " \n Player Two turn to play");
+    $("#total-score2").text(total2);
+    if(total2>=100){
+      alert("You won the game");
+    }else {
+
+    }
     disablePlayerTwo();
   });
 };
@@ -119,15 +139,7 @@ $(document).ready(function(){
     name2= $("#second-player").val();
     $(".player-two-name").text(name2);
   });
-  function Player(name,generatedNumber,rollSum,total){
-    this.name=name;
-    this.generatedNumber=generatedNumber;
-    this.rollSum = rollSum;
-    this.total = total;
-  };
 
-  var playerOne = new Player(name1,generatedNumber1,rollSum1,total1);
-  var playerTwo = new Player(name2,generatedNumber2,rollSum2,total2);
 
   playerOneLogic();
   playerTwoLogic();
