@@ -40,11 +40,6 @@ function playerOneLogic(){
       rollSum1+=generatedNumber1;
       $("#current-score1").text(rollSum1);
       //$("#total-score1").text(total1);
-      if(total1>=100){
-        alert("You won the game");
-      }else {
-
-      }
     } else {
       rollSum1=0;
       $("#current-score1").text(rollSum1);
@@ -73,15 +68,9 @@ function playerTwoLogic(){
     generatedNumber2 = Math.floor(Math.random()*6 + 1);
     $("#die-two").text(generatedNumber2);
     // alert(stored_random);
-    if(generatedNumber1!=1){
+    if(generatedNumber2!=1){
       rollSum2+=generatedNumber2;
       $("#current-score2").text(rollSum2);
-      //$("#total-score1").text(total1);
-      if(total2>=100){
-        alert("You won the game");
-      }else {
-
-      }
     } else {
       rollSum2=0;
       $("#current-score2").text(rollSum2);
