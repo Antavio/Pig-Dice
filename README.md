@@ -35,7 +35,7 @@ The different technologies that were used to develop this program include:
 | When the cumulative score is equal or greater than 100  |The first player to get a cumulative of 100 is declared the winner|
 
 ### Link to live site
-Here is a link to the live website
+Here is a link to the live website https://antavio.github.io/Pig-Dice/
 
 ### Contact Me
 If you have any suggestions, additions or modifications on this project you can reach me via my email: njuguna13@gmail.com
